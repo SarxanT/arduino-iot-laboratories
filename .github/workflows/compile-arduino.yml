@@ -1,0 +1,31 @@
+name: Compile Arduino Mega lab sketches
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Static repository checks
+        run: python3 scripts/check_structure.py
+      - name: Install Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
+      - name: Install Mega board core and libraries
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr
+          arduino-cli lib install Ethernet
+          arduino-cli lib install ThingSpeak
+      - name: Create placeholder config for compile only
+        run: |
+          cp lab-06-thingspeak-ultrasonic/thingspeak_ultrasonic/secrets.example.h \
+             lab-06-thingspeak-ultrasonic/thingspeak_ultrasonic/secrets.h
+      - name: Compile six sketches
+        run: bash scripts/compile.sh

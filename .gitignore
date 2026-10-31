@@ -1,0 +1,12 @@
+# Never commit actual ThingSpeak credentials.
+**/secrets.h
+**/.env
+**/.env.*
+!**/.env.example
+*.log
+*.hex
+*.elf
+*.bin
+build/
+.DS_Store
+.vscode/
