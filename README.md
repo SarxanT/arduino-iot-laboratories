@@ -1,6 +1,8 @@
 # Arduino and IoT Laboratory Exercises
 
-> **Portfolio status:** Source review completed. GitHub Actions is configured to compile firmware for the Arduino Mega 2560. **Physical hardware and live network/ThingSpeak behavior have not been verified.**
+[![Arduino Mega compile](https://github.com/SarxanT/arduino-iot-laboratories/actions/workflows/compile-arduino.yml/badge.svg)](https://github.com/SarxanT/arduino-iot-laboratories/actions/workflows/compile-arduino.yml)
+
+> **Portfolio status:** Six Arduino Mega 2560 sketches successfully compiled in [GitHub Actions](https://github.com/SarxanT/arduino-iot-laboratories/actions/runs/41196010207) on 31 October 2026. **Physical hardware and live network/ThingSpeak behavior have not been verified.**
 
 A curated collection of six Arduino Mega 2560 laboratory sketches exploring digital inputs, PWM, sensing, local networking, and cloud telemetry. The exercises are independent and intended for learning and reproducible demonstrations—not production monitoring or security-sensitive deployments.
 
@@ -39,7 +41,7 @@ bash scripts/compile.sh
 
 The sample configuration lets the ThingSpeak sketch **compile**, but it cannot send real updates without a valid channel ID and write key. Never commit a populated `secrets.h`.
 
-A GitHub Actions workflow is included to compile all six sketches for **Arduino Mega 2560**. A passing build does not establish that wiring, sensors, Ethernet, or cloud services work in real conditions.
+GitHub Actions compiles all six sketches for **Arduino Mega 2560**, with the initial run successful. A passing build does not establish that wiring, sensors, Ethernet, or cloud services work in real conditions.
 
 ## What was improved
 

@@ -4,7 +4,7 @@
 
 - [x] Source files reorganized, duplicates removed, project documentation written.
 - [x] Basic static repository and credential checks passed at package preparation time.
-- [ ] Actual Arduino Mega compilation (requires Arduino CLI / IDE and dependencies).
+- [x] Six Arduino Mega sketches compiled in [GitHub Actions on 31 October 2026](https://github.com/SarxanT/arduino-iot-laboratories/actions/runs/41196010207).
 - [ ] Real board + component tests.
 - [ ] Ethernet DHCP, network-client, and server tests.
 - [ ] Live ThingSpeak channel upload with a new key.
@@ -29,7 +29,7 @@ python3 scripts/check_structure.py
 bash scripts/compile.sh
 ```
 
-The same compilation is configured in `.github/workflows/compile-arduino.yml`; it becomes live on GitHub after publishing. A green CI result is evidence of a successful **compile**, not of a successful physical or cloud test.
+The same compilation is configured in `.github/workflows/compile-arduino.yml` and runs automatically after publishing. A green CI result is evidence of a successful **compile**, not of a successful physical or cloud test.
 
 ### Evidence to add after hardware testing
 
